@@ -1,0 +1,113 @@
+-- setclipboard(_G.Key) or akchdsubxfeuq
+
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))();
+local Player = game.Players.LocalPlayer
+local Window = OrionLib:MakeWindow({Name = "Key system", HidePremium = false, IntroText = "Key system", SaveConfig = true, ConfigFolder = "OrionTest"})
+
+OrionLib:MakeNotification({
+	Name = "Logged in",
+	Content = "You are logged in as  "..Player.Name.."",
+	Image = "rbxassetid://4483345998",
+	Time = 5
+})
+
+_G.Key = "akchdsubxfeuq"
+_G.KeyInput = "string"
+
+function MakeScriptHub()
+    local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+    local Window = OrionLib:MakeWindow({Name = "HackeScripterX Hub | [ 🎃 UPD] Blade Ball", HidePremium = false, IntroText = "HackeScripterX", SaveConfig = true, ConfigFolder = "OrionTest"})
+
+
+--SCRIPT
+
+local  CombatTab = Window:MakeTab({
+    Name = "Combat",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+
+local Section = CombatTab:AddSection({
+    Name = "Combat"
+})
+
+CombatTab:AddButton({
+    Name = "Auto Rebater ✅",
+    Callback = function()
+           loadstring(game:HttpGet("https://raw.githubusercontent.com/Hosvile/Refinement/main/MC%3ABlade%20Ball%20Parry%20V4.0.0",true))()
+      end
+})
+
+CombatTab:AddButton({
+    Name = "Manual Spam 🛡️",
+    Callback = function()
+           loadstring(game:HttpGet('https://pastebin.com/raw/KB4xQe4j'))()
+      end
+})
+
+CombatTab:AddButton({
+    Name = "Fps boost 📡",
+    Callback = function()
+           loadstring(game:HttpGet("https://raw.githubusercontent.com/CasperFlyModz/discord.gg-rips/main/FPSBooster.lua"))()
+      end
+})
+
+--FIM
+
+
+   local Tab = Window:MakeTab({
+	Name = "About",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+Tab:AddParagraph("Key in discord ","https://discord.gg/696qnHRTMZ")
+---
+end
+
+function CorrectKeyNotification()
+    OrionLib:MakeNotification({
+        Name = "Correct Key!",
+        Content = "You have enterd the correct key!",
+        Image = "rbxassetid://4483345998",
+        Time = 5
+    })
+end
+
+function InncorectKeyNotification()
+    OrionLib:MakeNotification({
+        Name = "Inncorect Key!",
+        Content = "You have enterd the Inncorect key!",
+        Image = "rbxassetid://4483345998",
+        Time = 5
+    })
+end
+
+
+
+
+local Tab = Window:MakeTab({
+	Name = "Main",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+Tab:AddTextbox({
+	Name = "Enter key",
+	Default = "",
+	TextDisappear = true,
+	Callback = function(Value)
+		_G.KeyInput = Value
+	end	  
+})
+
+Tab:AddButton({
+	Name = "Check Key",
+	Callback = function()
+      		if _G.KeyInput == _G.Key then
+                MakeScriptHub()
+                CorrectKeyNotification()
+            else
+                InncorectKeyNotification()
+            end
+  	end    
+})
